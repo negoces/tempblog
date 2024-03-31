@@ -4,6 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Neko Blog(Temp)",
   description: "A Temporary Site To Store Blogs",
+  lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -24,6 +25,9 @@ export default defineConfig({
     footer: {
       message: "CC BY-NC-SA 4.0 | Power By VitePress",
       copyright: "Copyright © 2024-present nekodayo",
+    },
+    search: {
+      provider: "local",
     },
 
     socialLinks: [{ icon: "github", link: "https://github.com/negoces/" }],

@@ -20,6 +20,12 @@ export default defineConfig({
           { text: "Markdown Examples", link: "/posts/markdown-examples" },
         ],
       },
+      {
+        text: "Network",
+        items: [
+          { text: "VLAN Switch Guide", link: "/posts/network/vlan-vid" },
+        ],
+      },
     ],
 
     footer: {

@@ -23,7 +23,7 @@ export default defineConfig({
       {
         text: "Network",
         items: [
-          { text: "VLAN Switch Guide", link: "/posts/network/vlan-vid" },
+          { text: "VLAN Switch Guide", link: "/posts/network/vlan-config" },
         ],
       },
     ],

@@ -1,4 +1,4 @@
-# VLAN 交换机 VID 配置探究
+# VLAN 交换机配置探究
 
 入手了个杂牌交换机，没有所谓的 Access、Trunk、Hybrid 端口，只有 tagged、untagged 两个选项，故对部分国产交换机的 VLAN 行为做个探究
 
@@ -7,16 +7,16 @@
 ```txt
 端口接收:
     tagged:
-        若 [数据包 VLAN ID] 为 [空]: [数据包 VLAN ID] 改写为 [PID]
+        若 [数据包 VLAN ID] 为 [空]: [数据包 VLAN ID] 改写为 [VID]
         若 [数据包 VLAN ID] 在 [端口 VLAN ID] 中: [数据包 VLAN ID] 不变
         若 [数据包 VLAN ID] 不在 [端口 VLAN ID] 中: 丢弃
     untagged:
-        [数据包 VLAN ID] 改写为 [PID]
+        [数据包 VLAN ID] 改写为 [VID]
 内部路由:
-    数据包送到所有 [端口 VLAN ID] [PID] 包含 [数据包 VLAN ID] 的端口
+    数据包送到所有 [端口 VLAN ID] [VID] 包含 [数据包 VLAN ID] 的端口
 端口发送:
     tagged:
-        若 [数据包 VLAN ID] 为 [PID]: [数据包 VLAN ID] 改写为 [空]
+        若 [数据包 VLAN ID] 为 [VID]: [数据包 VLAN ID] 改写为 [空]
         若 [数据包 VLAN ID] 为 [端口 VLAN ID]: [数据包 VLAN ID] 不变
     untagged:
         [数据包 VLAN ID] 改写为 [空]
